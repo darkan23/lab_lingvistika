@@ -1,41 +1,32 @@
 <html lang="ru">
+	<head>
+		<title>Лаб</title>
 
-<head>
-    <title>Лаб</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="//cdn.rawgit.com/fdaciuk/ajax/v3.0.4/dist/ajax.min.js"></script>
+	</head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="//cdn.rawgit.com/fdaciuk/ajax/v3.0.4/dist/ajax.min.js"></script>
+	<body>
+		<nav class="navbar navbar-dark bg-dark">
+			<div class="container">
+				<span class="navbar-brand mb-0 h1">Контрольная работа</span>
+			</div>
+		</nav>
 
-    <style>
-        .item {
-            border: 2px solid black;
-            margin: 2px;
-            padding: 4px;
-        }
-
-        .time {
-            text-align: right;
-        }
-
-        .url {
-            margin-bottom: 4px;
-        }
-    </style>
-
-</head>
-
-<body>
-{% for item in data %}
-<div class="list">
-    <div class="item">
-        <h3 class="name">{{ item[0] }}</h3>
-        <h4 class="url">Ссылка: {{ item[2] }}</h4>
-        <div class="text">{{ item[1] }}</div>
-        <h6 class="time">Дата публиации: {{ item[3] }}</h6>
-    </div>
-</div>
-{% endfor %}
-</body>
-
+		<div class="container">
+			{% for item in data %}
+			<div class="list card" style="margin-top: 16px">
+				<div class="item">
+					<div class="time card-header">Дата публиации: {{ item[3] }}</div>
+					<div class="card-body">
+						<h5 class="name card-title">{{ item[0] }}</h5>
+						<p class="text card-text">{{ item[1] }}</p>
+						<p class="url" style="margin-bottom: 0">Ссылка: {{ item[2] }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</body>
 </html>
