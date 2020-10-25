@@ -1,1 +1,1 @@
-# news-page-parser
+# lab_lingvistika
